@@ -1,7 +1,129 @@
-body {
-  background-color: bisque;
+  @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.hello {
+body {
+  font-family: 'Didact Gothic', sans-serif;}
+
+.boxes {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  gap: 10px;
+  background-color: #fff;
+}
+
+:root {
+  --color-text: #FFF;
+  --color-front: hsl(250deg, 100%, 40%);
+  --color-back: hsl(252deg, 100%, 60%);
+}
+
+.series {
+  position: relative;
+  display: inline-block;
+  border-radius: 6px;
+  background: var(--color-front);
+  padding: 16px 40px;
+  margin: 0 8px;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--color-text);
+  clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0% 100%, 0% 0px);
+}
+
+.series:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  transform: translate(-100%, -100%);
+}
+
+.series:hover {
+  clip-path: polygon(80px 0px, 100% 0px, 100% 100%, 0% 100%, 0% 80px);
+  transition: clip-path 500ms ;
+}
+
+ .series:hover:after {
+  transition:  transform 500ms ;
+  background: var(--color-back);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1); 
+  border-radius: 0 0 6px 0;
+  width: 80px;
+  height: 80px;
+  transform: translate(0%, 0%);
+} 
+
+.series-img{
+  width: 100%;
+  height: 350px;
+  border-radius: 13px;
+  border-bottom-right-radius: 0;
+}
+
+.series-name{
+  font-size: 20px;
+}
+
+@media (min-width: 375px) {
+  .boxes {
+      grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (min-width: 640px) {
+  .boxes {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 860px) {
+  .boxes {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1020px) {
+  .boxes {
+      grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.likebtn{
+  width: 160px;
+  padding: 13px 16px;
+  display: flex;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #fff;
+  margin: 10px;
+  margin-left: 0;
+  border-radius: 5px;
+}
+.heart{
+  /* background: url("./images/img.png") no-repeat; */
+  background-position: left;
+  height: 30px;
+  width: 30px;
+  background-color: #fff;
+  color: white;
+  z-index: 7;
+}
+.text{
+  font-size: 21px;
+  color: #fff;
+}
+
+.active{
+  background-color: red;
   color: red;
 }
+
