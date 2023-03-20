@@ -1,5 +1,5 @@
-  @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
-  
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -122,8 +122,65 @@ body {
   color: #fff;
 }
 
-.active{
+.likebtn .active{
   background-color: red;
   color: red;
+  text-decoration: none;
+}
+
+.active{
+  text-decoration: none;
+}
+
+footer {
+  position: absolute;
+  left: 0.5rem;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  border: 3px solid black;
+  font-size: 1.2rem;
+  box-shadow: 0 0 10px darkgrey;
+  display: flex;
+  flex-direction: column;
+}
+
+footer p {
+  padding: 1rem 1rem;
+}
+
+.footer-down {
+  width: 100%;
+  height: 3vh;
+  background: darkgray;
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+  border-top: 3px solid black;
+  padding: 1rem;
+}
+
+.lines {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  transform: rotate(-45deg);
+  position: absolute;
+  right: 0;
+  bottom: 0.3rem;
+}
+
+.line {
+  background-color: black;
+}
+
+.line1 {
+  width: 22px;
+  height: 3px;
+}
+
+.line2 {
+  width: 12px;
+  height: 3px;
 }
 
