@@ -1,0 +1,30 @@
+{
+  "name": "javasript-capstone-project",
+  "version": "1.0.0",
+  "description": "Group Capstone project",
+  "main": "index.js",
+  "devDependencies": {
+    "css-loader": "^6.7.3",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.2",
+    "webpack": "^5.76.2",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.13.1"
+  },
+  "scripts": {
+    "build": "webpack --mode development",
+    "watch": "webpack --watch",
+    "start": "webpack serve --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danutibe07/Javasript-Capstone-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danutibe07/Javasript-Capstone-Project/issues"
+  },
+  "homepage": "https://github.com/danutibe07/Javasript-Capstone-Project#readme"
+}
