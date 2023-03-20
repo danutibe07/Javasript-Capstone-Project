@@ -1,6 +1,6 @@
 
-
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -125,13 +125,13 @@ body {
   color: #fff;
 }
 
-.likebtn .active{
-  background-color: red;
-  color: red;
+.active {
   text-decoration: none;
 }
 
-.active{
+.likebtn .active {
+  background-color: red;
+  color: red;
   text-decoration: none;
 }
 
