@@ -1,8 +1,8 @@
 const displaySeries = (data) => {
-    const seriesapp =  document.querySelector(".boxes")
-    let series = document.createElement("div")
-    series.classList.add("series")
-    series.innerHTML = `
+  const seriesapp = document.querySelector('.boxes');
+  const series = document.createElement('div');
+  series.classList.add('series');
+  series.innerHTML = `
     <div> <img class="series-img" src="${data.image.medium}" alt=""></div>
     <div class="details">
         <h4 class="series-name">${data.name}</h4>
@@ -13,8 +13,8 @@ const displaySeries = (data) => {
         </div>
         <div>Comment</div>
         <div>Reserve</div>
-    </div>`
-    seriesapp.appendChild(series)
-}
+    </div>`;
+  seriesapp.appendChild(series);
+};
 
 export default displaySeries;
