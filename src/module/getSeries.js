@@ -1,4 +1,4 @@
-import renderPopUp from './getItems.js';
+import renderPopUp from './createPopUp.js';
 
 const getSeries = async () => {
   const dataStream = await fetch('https://api.tvmaze.com/shows');
