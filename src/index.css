@@ -157,7 +157,7 @@ footer p {
 .footer-down {
   width: 100%;
   height: 3vh;
-  background: var(--body-bg);
+  background: var(--color-front);
   display: flex;
   align-items: flex-end;
   justify-content: end;
@@ -205,12 +205,15 @@ button {
 #popUp {
   display: none;
   position: fixed;
-  background: #2a2c44da;
+  background: #2a2c44f7;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 2;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding: 2rem;
 }
 
 .singlePopUp {
@@ -219,15 +222,98 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow-y: scroll;
+  gap: 0.6rem;
+}
+
+.singlePopUp h2 {
+  color: white;
+}
+
+.singlePopUp h3 {
+  color: white;
+}
+
+.comment p {
+  color: white;
+}
+
+.singlePopUp h4 {
+  color: white;
 }
 
 .popUpImage {
-  width: 50vw;
+  width: 40vw;
   margin-top: 1rem;
 }
 
 .popUpImage img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+}
+
+.description {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.description h3 {
+  display: flex;
+  gap: 1rem;
+  color: whitesmoke;
+  background: var(--color-back);
+  padding: 1rem 0.8rem;
+  border-radius: 10px;
+  box-shadow: 8px 8px 10px rgb(3, 3, 31);
+}
+
+.closeIcon {
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  background: none;
+  cursor: pointer;
+}
+
+.closeIcon span {
+  color: white;
+  font-weight: 900;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#name {
+  width: 30vw;
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  border: none;
+  box-shadow: 8px 8px 10px rgb(3, 3, 31);
+}
+
+#name::placeholder {
+  font-size: 1.1rem;
+}
+
+#message {
+  padding: 0.8rem;
+  width: 30vw;
+  height: 15vh;
+  font-size: 1.1rem;
+  box-shadow: 8px 8px 10px rgb(3, 3, 31);
+}
+
+#message::placeholder {
+  font-size: 1.1rem;
+}
+
+#form button {
+  width: 10vw;
+  font-size: 1.2rem;
+  box-shadow: 8px 8px 10px rgb(3, 3, 31);
+  margin-bottom: 1rem;
 }

@@ -1,4 +1,4 @@
-import GetItems from './getItems.js';
+import renderPopUp from './getItems.js';
 
 const getSeries = async () => {
   const dataStream = await fetch('https://api.tvmaze.com/shows');
@@ -21,7 +21,7 @@ const getSeries = async () => {
       </div>`;
     seriesapp.appendChild(series);
   });
-  GetItems();
+  renderPopUp();
 };
 
 export default getSeries;
