@@ -11,6 +11,31 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+ul {
+  list-style-type: none;
+  margin: 30px;
+  padding: 10px;
+}
+
+ul > li {
+  padding: 25px;
+  padding-left: 60px;
+}
+
+li {
+  display: inline;
+}
+
+li > a {
+  color: black;
+}
+
+.navItem {
+  text-align: center;
+  display:inline-block;
+  vertical-align:top;
+}
+
 footer {
   position: absolute;
   left: 0.5rem;
