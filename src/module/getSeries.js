@@ -1,4 +1,5 @@
 import GetItems from './getItems.js';
+
 const getSeries = async () => {
   const dataStream = await fetch('https://api.tvmaze.com/shows');
   const dataResponse = await dataStream.json();
@@ -15,13 +16,12 @@ const getSeries = async () => {
           <span class="countlike">34</span>
           <span class="text">Likes</span>
           </div>
-          <button id="comment">Comment</button>
+          <button id="commentBtn" data-id=${element.id}>Comment</button>
           <button id="reserve">Reservation</button>
       </div>`;
     seriesapp.appendChild(series);
   });
-  GetItems()
+  GetItems();
 };
 
 export default getSeries;
-
