@@ -54,7 +54,7 @@ const getComment = async () => {
     const li = document.createElement('li');
     li.innerHTML = `
     <p>${item.creation_date}</p>
-    <h3>${item.username}</h3>
+    <h3>${item.username}:</h3>
     <p>${item.comment}</p>
     `;
     comments.appendChild(li);
@@ -103,7 +103,6 @@ const renderPopUp = async () => {
       </div>
       <h3>Comment</h3>
       <ul class='comment' id='comment' data-name='${newData.name}'>
-      <p>This is the best serie ever</p>
       </ul>
       <h4>Add a comment</h4>
       <form action="#" method="post" id="form" data-id='${newData.name}'>
