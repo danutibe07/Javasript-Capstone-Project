@@ -268,10 +268,10 @@ button {
 
 .description h3 {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   color: whitesmoke;
   background: var(--color-back);
-  padding: 1rem 0.8rem;
+  padding: 0.8rem 0.5rem;
   border-radius: 10px;
   box-shadow: 8px 8px 10px rgb(3, 3, 31);
 }
@@ -301,7 +301,7 @@ button:hover {
 }
 
 #name {
-  width: 30vw;
+  width: 40vw;
   padding: 0.8rem;
   font-size: 1.1rem;
   border: none;
@@ -314,7 +314,7 @@ button:hover {
 
 #message {
   padding: 0.8rem;
-  width: 30vw;
+  width: 40vw;
   height: 15vh;
   font-size: 1.1rem;
   box-shadow: 8px 8px 10px rgb(3, 3, 31);
@@ -325,7 +325,7 @@ button:hover {
 }
 
 #form button {
-  width: 10vw;
+  width: 10rem;
   font-size: 1.2rem;
   box-shadow: 8px 8px 10px rgb(3, 3, 31);
   margin-bottom: 1rem;
@@ -345,4 +345,16 @@ button:hover {
   padding: 0.6rem;
   border-radius: 5px;
   box-shadow: 8px 8px 10px rgb(3, 3, 31);
+}
+
+/* PopUp Mbobile */
+
+@media screen and (max-width: 768px) {
+  #name {
+    width: 80vw;
+  }
+
+  #message {
+    width: 80vw;
+  }
 }
