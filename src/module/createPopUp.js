@@ -1,62 +1,12 @@
+import renderComment from './renderComment.js';
+import getComment from './getComment.js';
+
 const popUp = document.getElementById('popUp');
-// eslint-disable-next-line operator-linebreak
-const baseURL =
-  'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/bcgJRMnQ1dKWghvE6rmX';
+
 const closePopUp = () => {
   const cancel = document.getElementById('close');
   cancel.addEventListener('click', () => {
     popUp.style.display = 'none';
-  });
-};
-
-const getComment = async () => {
-  const comments = document.getElementById('comment');
-  const span = document.getElementById('spanComment');
-  const { name } = comments.dataset;
-  const response = await fetch(`${baseURL}/comments?item_id=${name}`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-  const data = await response.json();
-  span.innerText = `(${data.length})`;
-
-  data.forEach((item) => {
-    const li = document.createElement('li');
-    li.innerHTML = `
-    <p>${item.creation_date}</p>
-    <h3>${item.username}:</h3>
-    <p>${item.comment}</p>
-    `;
-    comments.appendChild(li);
-  });
-};
-
-const renderComment = () => {
-  const form = document.getElementById('form');
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const { id } = form.dataset;
-    const name = document.getElementById('name');
-    const message = document.getElementById('message');
-
-    const obj = {
-      item_id: id,
-      username: name.value,
-      comment: message.value,
-    };
-    await fetch(`${baseURL}/comments`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(obj),
-    });
-
-    form.reset();
-    getComment();
   });
 };
 
@@ -100,7 +50,7 @@ const renderPopUp = async () => {
       <span>0</span>
       </h3>
       </div>
-      <h3>Comments <span id="spanComment"></span></h3>
+      <h2>Comments <span id="spanComment"></span></h2>
       <ul class='comment' id='comment' data-name='${newData.name}'>
       </ul>
       <h4>Add a comment</h4>
