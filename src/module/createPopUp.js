@@ -11,6 +11,7 @@ const closePopUp = () => {
 
 const getComment = async () => {
   const comments = document.getElementById('comment');
+  const span = document.getElementById('spanComment');
   const { name } = comments.dataset;
   const response = await fetch(`${baseURL}/comments?item_id=${name}`, {
     method: 'GET',
@@ -19,6 +20,7 @@ const getComment = async () => {
     },
   });
   const data = await response.json();
+  span.innerText = `(${data.length})`;
 
   data.forEach((item) => {
     const li = document.createElement('li');
@@ -98,7 +100,7 @@ const renderPopUp = async () => {
       <span>0</span>
       </h3>
       </div>
-      <h3>Comment</h3>
+      <h3>Comments <span id="spanComment"></span></h3>
       <ul class='comment' id='comment' data-name='${newData.name}'>
       </ul>
       <h4>Add a comment</h4>

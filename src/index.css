@@ -216,6 +216,10 @@ button {
   padding: 2rem;
 }
 
+#popUp::-webkit-scrollbar {
+  display: none;
+}
+
 .singlePopUp {
   display: flex;
   flex-direction: column;
@@ -223,6 +227,10 @@ button {
   justify-content: center;
   overflow-y: scroll;
   gap: 0.6rem;
+}
+
+.singlePopUp::-webkit-scrollbar {
+  display: none;
 }
 
 .singlePopUp h2 {
