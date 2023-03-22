@@ -1,8 +1,33 @@
 const popUp = document.getElementById('popUp');
+// eslint-disable-next-line operator-linebreak
+const baseURL =
+  'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/bcgJRMnQ1dKWghvE6rmX';
 const closePopUp = () => {
   const cancel = document.getElementById('close');
   cancel.addEventListener('click', () => {
     popUp.style.display = 'none';
+  });
+};
+
+const getComment = async () => {
+  const comments = document.getElementById('comment');
+  const { name } = comments.dataset;
+  const response = await fetch(`${baseURL}/comments?item_id=${name}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  const data = await response.json();
+
+  data.forEach((item) => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+    <p>${item.creation_date}</p>
+    <h3>${item.username}:</h3>
+    <p>${item.comment}</p>
+    `;
+    comments.appendChild(li);
   });
 };
 
@@ -20,44 +45,16 @@ const renderComment = () => {
       username: name.value,
       comment: message.value,
     };
-
-    fetch(
-      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/bcgJRMnQ1dKWghvE6rmX/comments',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(obj),
-      },
-    );
-
-    form.reset();
-  });
-};
-
-const getComment = async () => {
-  const comments = document.getElementById('comment');
-  const { name } = comments.dataset;
-  const response = await fetch(
-    `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/bcgJRMnQ1dKWghvE6rmX/comments?item_id=${name}`,
-    {
-      method: 'GET',
+    await fetch(`${baseURL}/comments`, {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-    },
-  );
-  const data = await response.json();
+      body: JSON.stringify(obj),
+    });
 
-  data.forEach((item) => {
-    const li = document.createElement('li');
-    li.innerHTML = `
-    <p>${item.creation_date}</p>
-    <h3>${item.username}:</h3>
-    <p>${item.comment}</p>
-    `;
-    comments.appendChild(li);
+    form.reset();
+    getComment();
   });
 };
 
