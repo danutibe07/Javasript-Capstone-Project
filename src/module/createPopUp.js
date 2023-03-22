@@ -6,6 +6,61 @@ const closePopUp = () => {
   });
 };
 
+const renderComment = () => {
+  const form = document.getElementById('form');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const { id } = form.dataset;
+    const name = document.getElementById('name');
+    const message = document.getElementById('message');
+
+    const obj = {
+      item_id: id,
+      username: name.value,
+      comment: message.value,
+    };
+
+    fetch(
+      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/bcgJRMnQ1dKWghvE6rmX/comments',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(obj),
+      },
+    );
+
+    form.reset();
+  });
+};
+
+const getComment = async () => {
+  const comments = document.getElementById('comment');
+  const { name } = comments.dataset;
+  const response = await fetch(
+    `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/bcgJRMnQ1dKWghvE6rmX/comments?item_id=${name}`,
+    {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    },
+  );
+  const data = await response.json();
+
+  data.forEach((item) => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+    <p>${item.creation_date}</p>
+    <h3>${item.username}</h3>
+    <p>${item.comment}</p>
+    `;
+    comments.appendChild(li);
+  });
+};
+
 const renderPopUp = async () => {
   const btns = document.querySelectorAll('#commentBtn');
   const dataStream = await fetch('https://api.tvmaze.com/shows');
@@ -47,16 +102,16 @@ const renderPopUp = async () => {
       </h3>
       </div>
       <h3>Comment</h3>
-      <div class='comment'>
+      <ul class='comment' id='comment' data-name='${newData.name}'>
       <p>This is the best serie ever</p>
-      </div>
+      </ul>
       <h4>Add a comment</h4>
-      <form action="#" method="post" id="form">
+      <form action="#" method="post" id="form" data-id='${newData.name}'>
       <label for="name">
-        <input type="text" name="name" id="name" placeholder="Your Name" />
+        <input type="text" name="name" id="name" placeholder="Your Name" required />
       </label>
       <label for="message">
-        <textarea name="message" id="message" placeholder="Your insights" ></textarea>
+        <textarea name="message" id="message" placeholder="Your insights" required ></textarea>
       </label>
       <button type="submit" class='Submit-btn'>Comment</button>
     </form>
@@ -65,6 +120,8 @@ const renderPopUp = async () => {
       div.innerHTML = element;
       popUp.appendChild(div);
       closePopUp();
+      renderComment();
+      getComment();
     });
   });
 };
