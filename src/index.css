@@ -103,7 +103,7 @@ body {
 }
 
 .likebtn {
-  width: 160px;
+  width: 170px;
   padding: 13px 16px;
   display: flex;
   cursor: pointer;
@@ -115,30 +115,40 @@ body {
 }
 
 .heart {
-  /* background: url("./images/img.png") no-repeat; */
   background-position: left;
-  height: 30px;
-  width: 30px;
+  height: 21px;
+  width: 21px;
   background-color: #fff;
   color: white;
   z-index: 7;
 }
 
+.countlike{
+  color: var(--color-text);
+  font-size: 21px;
+}
 .text {
   font-size: 21px;
   color: #fff;
+  padding-left: 3px;
 }
 
 .active {
   text-decoration: none;
 }
 
-.likebtn .active {
+.likebtn .active{
   background-color: red;
   color: red;
   text-decoration: none;
 }
 
+.btnlike{
+  background-color: var(--color-front);
+  height: 20px;
+  margin-bottom: 10px;
+  margin-top: -10px;
+}
 footer {
   position: fixed;
   left: 0;
