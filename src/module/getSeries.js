@@ -1,7 +1,9 @@
  import { toggleLike } from "./LikeApi";
  import { getLikes } from "./LikeApi";
- const getSeries = async ()=>{
- const dataStream = await fetch("https://api.tvmaze.com/shows");
+ import renderPopUp from './createPopUp.js';
+
+const getSeries = async () => {
+  const dataStream = await fetch('https://api.tvmaze.com/shows');
   const dataResponse = await dataStream.json();
   dataResponse.forEach((element) => {
     const seriesapp = document.querySelector(".boxes");
@@ -16,12 +18,13 @@
           <span class="countlike"  id="count" data-id="${element.name}">0</span>
           <span class="text"> Likes</span>
           </div>
-          <button id="comment">Comment</button>
+          <button id="commentBtn" data-id=${element.id}>Comment</button>
           <button id="reserve">Reservation</button>
       </div>`;
     seriesapp.appendChild(series);
   });
   toggleLike();
   getLikes()
+  renderPopUp();
 };
 export default getSeries;
