@@ -1,6 +1,7 @@
-import getImageData from './utils';
 const url = 'https://api.tvmaze.com/shows';
 import './popupStyle.css';
+import reservation from './postReservData.js';
+import getReservation from './getReservation';
 
 const overlay = document.querySelector('.overlay');
 
@@ -11,7 +12,6 @@ const renderPopup = async (e) => {
 	const res = await fetch(url);
 	const data = await res.json();
 	const movie = data.find(item => item.name === id);
-	console.log(movie);
 	const container = `
 	<div class="pop-in">
 		<button class="material-symbols-outlined close" id="closeBtn">close</button>
@@ -24,16 +24,26 @@ const renderPopup = async (e) => {
 				<li class="i-info">Language: ${movie.language}</li>
 				<li class="i-info">premiered: ${movie.premiered}</li>
 				<li class="i-info">genres: ${movie.genres[0]} ${movie.genres[1]} </li>
-				<li class="i-info">summary: ${movie.summary}</li>
-				<li class="i-info"><a href="${movie.url}">Click here</a>to Watch</li>
+				<li class="i-info"><a href="${movie.url}">Click here</a> to Watch</li>
 			</ul>
 		</div>
+		<div class="reservation">
+      <h2> Reservations <span id="resrvHeading"></span></h2>
+      <ul class="listReservations">
+      </ul>
+    </div>
 		<div>
 		<h2 id="headingresr">Add a reservation</h2>
-		<form action="" id="formData">
-      <input class="inputElm" type="text" placeholder="Your Name" required>
-      <input class="inputElm" type="date" placeholder="Start Date" required>
-      <input class="inputElm" type="date" placeholder="End Date" required>
+		<form action="#" method="post" id="formData" data-id="${movie.name}">
+			<label for="name">
+      	<input class="inputElm name" type="text" name="name" placeholder="Your Name" required>
+    	</label>
+			<label for="startDate">
+			<input class="inputElm startDate" name="startDate" type="date" placeholder="Start Date" required>
+    	</label>
+			<label for="endDate">
+			<input class="inputElm endDate" name="endDate" type="date" placeholder="End Date" required>
+    	</label>
       <Button type="submit" id="reserveButton">Reserve</Button>
     </form>
 		</div>
@@ -42,7 +52,6 @@ const renderPopup = async (e) => {
 	imgPop.classList.add('img-pop');
 	imgPop.classList.add('show');
 	imgPop.innerHTML = container;
-	console.log("overlay", overlay);
 	
 	overlay.appendChild(imgPop);
 	overlay.style.display = 'initial';
@@ -52,6 +61,8 @@ const renderPopup = async (e) => {
 		imgPop.style.display = "none";
 		overlay.style.display = "none";
 	});
+	reservation();
+	getReservation(movie);
 };
 
 const showPopup = () => {

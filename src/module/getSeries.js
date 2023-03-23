@@ -22,7 +22,6 @@ const getSeries = async () => {
     seriesapp.appendChild(series);
   });
   showPopup();
-  // GetItems()
 };
 
 export default getSeries;
