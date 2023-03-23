@@ -1,4 +1,5 @@
 import GetItems from './getItems.js';
+import showPopup from '../resrvPopup-mdul/renderPopup.js';
 const getSeries = async () => {
   const dataStream = await fetch('https://api.tvmaze.com/shows');
   const dataResponse = await dataStream.json();
@@ -16,11 +17,12 @@ const getSeries = async () => {
           <span class="text">Likes</span>
           </div>
           <button id="comment">Comment</button>
-          <button id="reserve">Reservation</button>
+          <button id="reserve" data-id="${element.name}">Reservation</button>
       </div>`;
     seriesapp.appendChild(series);
   });
-  GetItems()
+  showPopup();
+  // GetItems()
 };
 
 export default getSeries;
