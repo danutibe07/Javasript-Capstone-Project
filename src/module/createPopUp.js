@@ -35,19 +35,19 @@ const renderPopUp = async () => {
       <div class='description'>
       <h3>
       <p>View:</p>
-      <span>0</span>
+      <span>10</span>
       </h3>
       <h3>
       <p>Comments:</p>
-      <span>0</span>
+      <span>200</span>
       </h3>
       <h3>
       <p>Download:</p>
-      <span>0</span>
+      <span>590</span>
       </h3>
       <h3>
       <p>Episodes:</p>
-      <span>0</span>
+      <span>30</span>
       </h3>
       </div>
       <h2>Comments <span id="spanComment"></span></h2>
