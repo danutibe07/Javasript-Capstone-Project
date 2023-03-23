@@ -13,7 +13,6 @@ const likes = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneAp
         if (item.item_id === count.dataset.id){
           count.textContent  = `${item.item_id ? item.likes : "seen" }` ;
         }
-     
       } )
      })
 };
