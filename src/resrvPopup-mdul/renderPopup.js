@@ -8,7 +8,6 @@ const overlay = document.querySelector('.overlay');
 
 const renderPopup = async (e) => {
   const imgPop = document.createElement('div');
-  // const id  = e.target.dataset.id;
   const { id } = e.target.dataset;
   overlay.innerHTML = '';
   const res = await fetch(url);
