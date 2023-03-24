@@ -8,7 +8,6 @@ const getSeries = async () => {
   const movies = document.querySelector('.movies');
   movies.textContent = `(${dataResponse.length})`;
   dataResponse.forEach((element) => {
-    console.log(element);
     const seriesapp = document.querySelector('.boxes');
     const series = document.createElement('div');
     series.classList.add('series');
