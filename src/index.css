@@ -50,6 +50,31 @@ body {
   transform: translate(-100%, -100%);
 }
 
+ul {
+  list-style-type: none;
+  margin: 30px;
+  padding: 10px;
+}
+
+ul > li {
+  padding: 25px;
+  padding-left: 60px;
+}
+
+li {
+  display: inline;
+}
+
+li > a {
+  color: black;
+}
+
+.navItem {
+  text-align: center;
+  display:inline-block;
+  vertical-align:top;
+}
+
 .series:hover {
   clip-path: polygon(80px 0, 100% 0, 100% 100%, 0% 100%, 0% 80px);
   transition: clip-path 500ms;
