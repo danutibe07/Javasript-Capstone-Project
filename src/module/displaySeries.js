@@ -1,5 +1,3 @@
-import getSeries from "./getSeries";
-
 const displaySeries = (data) => {
   const seriesapp = document.querySelector('.boxes');
   const series = document.createElement('div');

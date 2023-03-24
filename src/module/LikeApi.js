@@ -1,34 +1,33 @@
-const likes = "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/uzNO5VA16ikpeSeHOP0M/likes";
+const likes = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/uzNO5VA16ikpeSeHOP0M/likes';
 
 export const getLikes = async () => {
-  const counts = document.querySelectorAll("#count");
+  const counts = document.querySelectorAll('#count');
   const request = await fetch(likes, {
-    method: "GET",
-    headers: { "Content-Type": "application/json" },
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
   });
   const response = await request.json();
   counts.forEach((count) => {
     response.forEach((item) => {
-      console.log(item);
       if (item.item_id === count.dataset.id) {
-        count.textContent = `${item.item_id ? item.likes : "seen"}`;
+        count.textContent = `${item.item_id ? item.likes : 'seen'}`;
       }
     });
   });
 };
 
-export const toggleLike = (e, series_id) => {
-  const btns = document.querySelectorAll(".btnlike");
+export const toggleLike = () => {
+  const btns = document.querySelectorAll('.btnlike');
   btns.forEach((btn) => {
-    btn.addEventListener("click", async (e) => {
+    btn.addEventListener('click', async (e) => {
       getLikes();
-      const serie_id = e.target.dataset.id;
+      const serieId = e.target.dataset.id;
       const objectLike = {
-        item_id: serie_id,
+        item_id: serieId,
       };
       fetch(likes, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(objectLike),
       });
     });

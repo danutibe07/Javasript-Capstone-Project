@@ -1,14 +1,14 @@
- import { toggleLike } from "./LikeApi";
- import { getLikes } from "./LikeApi";
- import renderPopUp from './createPopUp.js';
+import { toggleLike, getLikes } from './LikeApi.js';
+
+import renderPopUp from './createPopUp.js';
 
 const getSeries = async () => {
   const dataStream = await fetch('https://api.tvmaze.com/shows');
   const dataResponse = await dataStream.json();
   dataResponse.forEach((element) => {
-    const seriesapp = document.querySelector(".boxes");
-    const series = document.createElement("div");
-    series.classList.add("series");
+    const seriesapp = document.querySelector('.boxes');
+    const series = document.createElement('div');
+    series.classList.add('series');
     series.innerHTML = `
       <div> <img class="series-img" src="${element.image.medium}" alt=""></div>
       <div class="details">
@@ -24,7 +24,7 @@ const getSeries = async () => {
     seriesapp.appendChild(series);
   });
   toggleLike();
-  getLikes()
+  getLikes();
   renderPopUp();
 };
 export default getSeries;
