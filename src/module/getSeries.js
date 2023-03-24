@@ -1,5 +1,5 @@
 import { toggleLike, getLikes } from './LikeApi.js';
-
+import showPopup from '../resrvPopup-mdul/renderPopup.js';
 import renderPopUp from './createPopUp.js';
 
 const getSeries = async () => {
@@ -19,12 +19,13 @@ const getSeries = async () => {
           <span class="text"> Likes</span>
           </div>
           <button id="commentBtn" data-id=${element.id}>Comment</button>
-          <button id="reserve">Reservation</button>
+          <button id="reserve" data-id="${element.name}">Reservation</button>
       </div>`;
     seriesapp.appendChild(series);
   });
   toggleLike();
   getLikes();
   renderPopUp();
+  showPopup();
 };
 export default getSeries;

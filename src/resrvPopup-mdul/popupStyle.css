@@ -1,0 +1,102 @@
+
+.hidden {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.831);
+  z-index: 2;
+  display: none;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.overlay::-webkit-scrollbar {
+  display: none;
+}
+
+.img-pop {
+  background-color: #fff;
+  padding: 1rem;
+  margin: 50px auto;
+  position: relative;
+  width: 90%;
+  overflow-y: scroll;
+  max-width: 1024px;
+  z-index: 5;
+}
+
+.img-pop::-webkit-scrollbar {
+  display: none;
+}
+
+.pop-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.close {
+  cursor: pointer;
+  font-size: 25px;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  z-index: 7;
+}
+
+.img > img {
+  max-width: 240px;
+  margin: 10px;
+}
+
+.info > ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  list-style: none;
+}
+
+.i-info {
+  padding: 10px;
+}
+
+.i-info > a {
+  text-decoration: none;
+  color: #000;
+}
+
+#headingresr {
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+
+#formData {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputElm {
+  padding: 0.8rem 1rem;
+  width: 20vw;
+}
+
+.listReservations {
+  list-style: none;
+  padding: 1rem;
+}
+
+#reservItem {
+  padding: 2px;
+  padding-bottom: 4px;
+}
