@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
+:root {
+  --color-text: #fff;
+  --color-back: #1e212c;
+  --color-front: #050b18;
+  --color-btn: #644dda;
+  --body-bg: #2a2c44;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,20 +19,38 @@ body {
   background: var(--body-bg);
 }
 
+header{
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-text);
+  align-items: center;
+  padding: 1rem;
+}
+
+.navbar{
+  margin: 0;
+}
+
+.navbar ul li {
+  list-style: none;
+}
+
+#logo{
+  width: 70px;
+}
+
+#imageDiv{
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 .boxes {
   display: grid;
   grid-template-columns: 1fr;
   width: 100%;
   gap: 10px;
   background: var(--body-bg);
-}
-
-:root {
-  --color-text: #fff;
-  --color-back: #1e212c;
-  --color-front: #050b18;
-  --color-btn: #644dda;
-  --body-bg: #2a2c44;
 }
 
 .series {
@@ -48,25 +74,6 @@ body {
   width: 80px;
   height: 80px;
   transform: translate(-100%, -100%);
-}
-
-ul {
-  list-style-type: none;
-  margin: 30px;
-  padding: 10px;
-}
-
-ul > li {
-  padding: 25px;
-  padding-left: 60px;
-}
-
-li {
-  display: inline;
-}
-
-li > a {
-  color: black;
 }
 
 .navItem {
