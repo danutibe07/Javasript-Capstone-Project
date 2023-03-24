@@ -9,7 +9,7 @@ const getReservation = async () => {
   });
   const data = await response.json();
   listReservations.innerHTML = '';
-  resrvHeading.innerText = `(${data.length === undefined ? "" : data.length})`;
+  resrvHeading.innerText = `(${data.length === undefined ? '' : data.length})`;
   data.forEach((item) => {
     const li = document.createElement('li');
     li.innerHTML = `

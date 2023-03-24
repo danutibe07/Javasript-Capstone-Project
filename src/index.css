@@ -12,6 +12,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
 }
 
 body {
@@ -19,27 +20,38 @@ body {
   background: var(--body-bg);
 }
 
-header{
+header {
   display: flex;
   justify-content: space-between;
   color: var(--color-text);
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 2rem;
+  background: var(--color-front);
+  margin-bottom: 1rem;
+  box-shadow: 0 0 10px var(--color-btn);
 }
 
-.navbar{
+.navlist {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navlist li {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: lightgray;
+}
+
+.navbar {
   margin: 0;
 }
 
-.navbar ul li {
-  list-style: none;
-}
-
-#logo{
+#logo {
   width: 70px;
 }
 
-#imageDiv{
+#imageDiv {
   width: 100%;
   object-fit: cover;
   border-radius: 50%;
@@ -66,6 +78,10 @@ header{
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%, 0% 0);
 }
 
+.btns {
+  white-space: nowrap;
+}
+
 .series::after {
   content: '';
   position: absolute;
@@ -78,8 +94,8 @@ header{
 
 .navItem {
   text-align: center;
-  display:inline-block;
-  vertical-align:top;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .series:hover {
@@ -99,7 +115,7 @@ header{
 
 .series-img {
   width: 100%;
-  height: 350px;
+  height: 450px;
   border-radius: 13px;
   border-bottom-right-radius: 0;
 }
@@ -153,10 +169,11 @@ header{
   z-index: 7;
 }
 
-.countlike{
+.countlike {
   color: var(--color-text);
   font-size: 1rem;
 }
+
 .text {
   font-size: 1rem;
   color: #fff;
@@ -167,13 +184,13 @@ header{
   text-decoration: none;
 }
 
-.likebtn .active{
+.likebtn .active {
   background-color: red;
   color: red;
   text-decoration: none;
 }
 
-.btnlike{
+.btnlike {
   background-color: var(--color-front);
   height: 20px;
   margin-bottom: 10px;

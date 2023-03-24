@@ -18,8 +18,10 @@ const getSeries = async () => {
           <span class="countlike"  id="count" data-id="${element.name}">0</span>
           <span class="text"> Likes</span>
           </div>
+          <div class='btns'>
           <button id="commentBtn" data-id=${element.id}>Comment</button>
           <button id="reserve" data-id="${element.name}">Reservation</button>
+          </div>
       </div>`;
     seriesapp.appendChild(series);
   });

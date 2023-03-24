@@ -6,9 +6,7 @@ const url = 'https://api.tvmaze.com/shows';
 
 const overlay = document.querySelector('.overlay');
 
-
 const renderPopup = async (e) => {
-  console.log(e.target)
   const imgPop = document.createElement('div');
   // const id  = e.target.dataset.id;
   const { id } = e.target.dataset;
