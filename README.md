@@ -111,7 +111,7 @@ To run tests, run the following command:
 
 ### Deployment
 
-This project is already deployed.
+[Live Demo](https://kaghenimbale.github.io/CapstoneJs/dist/)
 
 ## Video Explanation of the project
 
