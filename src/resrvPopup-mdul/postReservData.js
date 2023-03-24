@@ -14,15 +14,18 @@ const reservation = () => {
 			date_start: startDate.value,
 			date_end: endDate.value
 		};
+		// console.log("objectdata", objectdata)
 		fetch(url, {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(objectdata)
 		})
-		form.reset();
-		getReservation();
+		.then(() => {
+			form.reset();
+			getReservation();
+		})
+		.catch(error => console.log(error));
 	})
-	
 };
 
 export default reservation;

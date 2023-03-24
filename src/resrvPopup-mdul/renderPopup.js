@@ -1,7 +1,7 @@
 const url = 'https://api.tvmaze.com/shows';
 import './popupStyle.css';
 import reservation from './postReservData.js';
-import getReservation from './getReservation';
+import getReservation from './getReservation.js';
 
 const overlay = document.querySelector('.overlay');
 
@@ -30,7 +30,7 @@ const renderPopup = async (e) => {
 		<div class="reservation">
       <h2 <h2 style="
 			text-align: center;"> Reservations <span id="resrvHeading"></span></h2>
-      <ul class="listReservations">
+      <ul class="listReservations" data-id="${movie.name}">
       </ul>
     </div>
 		<div>
