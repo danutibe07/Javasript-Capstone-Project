@@ -1,5 +1,5 @@
-import GetItems from './getItems.js';
 import showPopup from '../resrvPopup-mdul/renderPopup.js';
+
 const getSeries = async () => {
   const dataStream = await fetch('https://api.tvmaze.com/shows');
   const dataResponse = await dataStream.json();
@@ -25,4 +25,3 @@ const getSeries = async () => {
 };
 
 export default getSeries;
-

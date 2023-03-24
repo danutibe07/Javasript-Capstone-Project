@@ -40,6 +40,7 @@
     "is-plain-object": "^2.0.4",
     "isexe": "^2.0.0",
     "isobject": "^3.0.1",
+    "jest-environment-jsdom": "^29.5.0",
     "jest-worker": "^27.5.1",
     "json-parse-even-better-errors": "^2.3.1",
     "json-schema-traverse": "^0.4.1",
