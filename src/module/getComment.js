@@ -13,6 +13,7 @@ const getComment = async () => {
     },
   });
   const data = await response.json();
+  comments.innerHTML = '';
   span.innerText = `(${response.status === 200 ? data.length : ''})`;
 
   data.forEach((item) => {
