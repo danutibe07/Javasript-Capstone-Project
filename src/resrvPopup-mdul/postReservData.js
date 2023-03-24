@@ -14,7 +14,6 @@ const reservation = () => {
 			date_start: startDate.value,
 			date_end: endDate.value
 		};
-		// console.log("objectdata", objectdata)
 		fetch(url, {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
@@ -24,7 +23,7 @@ const reservation = () => {
 			form.reset();
 			getReservation();
 		})
-		.catch(error => console.log(error));
+			.catch(error => { throw error; });
 	})
 };
 
