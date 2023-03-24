@@ -53,7 +53,11 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-This project is already deployed.
+[Live Demo](https://kaghenimbale.github.io/CapstoneJs/dist/)
+
+## Video Explanation of the project
+
+[Link to the video Explantion](https://www.awesomescreenshot.com/video/15911063)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
