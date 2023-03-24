@@ -12,7 +12,7 @@ const getReservation = async (movie) => {
 		data.forEach((item) => {
 			const li = document.createElement('li');
 			li.innerHTML = `
-			<p>${item.date_start} - ${item.date_end} by ${item.username}</p>
+			<p id="reservItem">${item.date_start} - ${item.date_end} by ${item.username}</p>
 			`
 			listReservations.appendChild(li);
 		});

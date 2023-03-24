@@ -90,3 +90,13 @@
   padding: 0.8rem 1rem;
   width: 20vw;
 }
+
+.listReservations {
+  list-style: none;
+  padding: 1rem;
+}
+
+#reservItem {
+  padding: 2px;
+  padding-bottom: 4px;
+}

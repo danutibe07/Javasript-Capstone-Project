@@ -28,7 +28,8 @@ const renderPopup = async (e) => {
 			</ul>
 		</div>
 		<div class="reservation">
-      <h2> Reservations <span id="resrvHeading"></span></h2>
+      <h2 <h2 style="
+			text-align: center;"> Reservations <span id="resrvHeading"></span></h2>
       <ul class="listReservations">
       </ul>
     </div>
