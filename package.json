@@ -51,6 +51,7 @@
     "mime-db": "^1.52.0",
     "mime-types": "^2.1.35",
     "neo-async": "^2.6.2",
+    "node-fetch": "^3.3.1",
     "node-releases": "^2.0.10",
     "p-limit": "^2.3.0",
     "p-locate": "^4.1.0",
@@ -84,6 +85,7 @@
     "watchpack": "^2.4.0",
     "webpack-merge": "^5.8.0",
     "webpack-sources": "^3.2.3",
+    "whatwg-fetch": "^3.6.2",
     "which": "^2.0.2",
     "wildcard": "^2.0.0"
   },

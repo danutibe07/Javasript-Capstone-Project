@@ -17,10 +17,3 @@ const displaySeries = (data) => {
 };
 
 export default displaySeries;
-
-// const commentBtnfnx = () =>{
-//   const commentbtn = document.querySelectorAll("#comment")
-//   commentbtn.forEach((e) => {
-//       console.log("comment");
-//   });
-// }

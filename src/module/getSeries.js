@@ -5,7 +5,10 @@ import renderPopUp from './createPopUp.js';
 const getSeries = async () => {
   const dataStream = await fetch('https://api.tvmaze.com/shows');
   const dataResponse = await dataStream.json();
+  const movies = document.querySelector('.movies');
+  movies.textContent = `(${dataResponse.length})`;
   dataResponse.forEach((element) => {
+    console.log(element);
     const seriesapp = document.querySelector('.boxes');
     const series = document.createElement('div');
     series.classList.add('series');
