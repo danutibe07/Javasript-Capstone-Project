@@ -53,7 +53,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[Live Demo](https://kaghenimbale.github.io/CapstoneJs/dist/)
+[Live Demo](https://danutibe07.github.io/Javasript-Capstone-Project/dist/)
 
 ## Video Explanation of the project
 
