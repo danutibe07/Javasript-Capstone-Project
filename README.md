@@ -53,7 +53,11 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-This project is already deployed.
+[Live Demo](https://danutibe07.github.io/Javasript-Capstone-Project/dist/)
+
+## Video Explanation of the project
+
+[Link to the video Explantion](https://www.awesomescreenshot.com/video/15911063?key=8399a59fc55436f5098a317fb8802f30)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -111,7 +115,11 @@ To run tests, run the following command:
 
 ### Deployment
 
-This project is already deployed.
+[Live Demo](https://danutibe07.github.io/Javasript-Capstone-Project/dist/)
+
+## Video Explanation of the project
+
+[Link to the video Explantion](https://www.awesomescreenshot.com/video/15911063)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

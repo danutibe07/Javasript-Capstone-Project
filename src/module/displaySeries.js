@@ -8,11 +8,10 @@ const displaySeries = (data) => {
         <h4 class="series-name">${data.name}</h4>
         <div class="likebtn">
         <span class="heart"></span>
-        <span class="countlike">4</span>
+        <span class="countlike">34</span>
         <span class="text">Likes</span>
         </div>
-        <div>Comment</div>
-        <div>Reserve</div>
+        <button id="comment">comment</button>
     </div>`;
   seriesapp.appendChild(series);
 };
